@@ -1,0 +1,8 @@
+*.elc
+*~
+.\#*
+TAGS
+\#*
+developers.el
+gtags.el
+loaddefs.el

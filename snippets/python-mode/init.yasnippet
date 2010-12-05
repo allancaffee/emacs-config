@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# key: "init"
+# --
+${1/void$|(.+)/(?1:\n\treturn nil;)/}
+
+def __init__(self${1:$(maybe ", ")}$1${2:$(maybe ", ")}$2):
+   ${1:$(maybe "self._")}$1${1:$(maybe " = ")}$1${2:$(maybe "\n")}${2:"self._")}$2${2:$(maybe " = ")}$2
+   $0

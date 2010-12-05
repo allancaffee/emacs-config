@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: entries
+# (setq debug-on-error t)
+# --
+comments_re = re.compile('Comments \((\d+)\)')
+
+class StageEntries(StageBase):
+   def process(self, tree):
+        for entry in tree.cssselect('$1'):
+            title, link = helpers.split_anchor(entry.$2)
+            date_str = $3
+            date = dateparser.parse(date_str)
+            views = $4
+            comments = $5
+            comments = comments_re.search(comments).group(1)
+            yield self.make_report_asset_from_url(title, link, date, views, comments)
