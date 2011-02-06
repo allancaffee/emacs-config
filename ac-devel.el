@@ -126,9 +126,6 @@
                  "\C-cm" 'ac-latex-mathify)))
     )
 
-(when (require 'protobuf-mode)
-  (add-to-list 'auto-mode-alist '("\\.proto$" . protobuf-mode)))
-
 ;; Remove the call to auto-template from the find-file-hooks.  I really
 ;; need to shoot him an angry email about adding things to peoples
 ;; hooks.
